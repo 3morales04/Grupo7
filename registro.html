@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +7,29 @@
     <title>Registro</title><br>
 </head>
 <body>
-    <form id="form-registro">Registro<br>
+    <form id="form-registro" action="#" method="POST">Registro<br>
         <br>
-        <label>Nombre</label><br>
-        <input type="name" name="Nombre" Id="Nombre" size="20"/><br>
+        <label for="Nombre">Nombre</label><br>
+        <input type="name" name="Nombre" Id="Nombre" size="20" required/><br>
+        
         <label>Genero</label><br>
-        <input type="radio" id="M">M
-        <input type="radio" id="F">F<br>
-        <label>Telefono</label><br>
-        <input type="text" id="Telefono"><br>
-        <label>Direccion</label><br>
-        <input type="text" id="Direccion"><br>
-        <label>Correo</label><br>
-        <input type="email" id="Direccion"><br>
-        <label>Contrasena</label><br>
-        <input type="password" id="Contrasena"><br>
+        <input type="radio" id="M" name="genero" required/>
+        <label for="M">M</label>
+        <input type="radio" id="F" name="genero" required/>
+        <label for="F">F</label><br>
+        
+        <label for="Telefono">Telefono</label><br>
+        <input type="number" id="Telefono" required/><br>
+        
+        <label for="Direccion">Direccion</label><br>
+        <input type="text" id="Direccion" required/><br>
+        
+        <label for="Correo">Correo</label><br>
+        <input type="email" id="Correo" required/><br>
+        
+        <label for="Contrasena">Contrasena</label><br>
+        <input type="password" id="Contrasena" required/><br>
+        
         <br>
         <input type="submit" value="Registrar" id="btn-submit-form"/>
     

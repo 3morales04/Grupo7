@@ -1,8 +1,87 @@
-* {
-    margin:0;
-    padding:0;
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
+/*CABECERA===============================*/
+
+header{
+    background-color: #1f53c5;
+    display: flexbox;
+    width: 100%;
+}
+
+#h1-header-logo{
+    user-select: none;
+    padding: 40px;
+}
+
+/*=======================================*/
+
+/*BOTON MENU HAMBURGUESA=================*/
+
+.menu-hamburguesa{
+    user-select: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    color: whitesmoke;
+    cursor: pointer;
+    z-index: 150;
+}
+
+#btn-menu-hamburguesa{
+    display: none;   
+}
+
+/*=======================================*/
+
+/*MENU===================================*/
+
+#nav-menu{
+    box-shadow: 7px 13px 37px #000000;
+    padding-top: 50px;
+    background-color:#000000AA;
+    position: fixed;
+    top: 0;
+    left: 110%;
+    width: 30%;
+    height: 100vh;
+    z-index: 100;
+}
+
+#btn-menu-hamburguesa:checked~nav{
+    left: 70%;
+}
+
+.lista-u{
+    list-style: none;
+}
+
+.item-menu{
+    display: block;
+    margin: auto;
+    padding: 0 20px;
+}
+
+button{
+    justify-self: center;
+    background: none;
+    border: none;
+}
+
+button a{
+    color: aliceblue;
+    text-decoration: none;
+    user-select: none;
+}
+
+/*=======================================*/
+
+/*FORMULARIO=============================*/
+
 #form-registro{
     width: 400px;
     background-color: #2a3d53; 
@@ -34,3 +113,5 @@
     background: #1f53c5;
     font-weight: bold;
 }
+
+/*=======================================*/

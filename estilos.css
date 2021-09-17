@@ -46,7 +46,7 @@ header{
     background-color:#000000AA;
     position: fixed;
     top: 0;
-    left: 110%;
+    left: 70%;
     width: 30%;
     height: 100vh;
     z-index: 100;
@@ -174,3 +174,5 @@ button a{
         font-size: 1.3em;
     }
 }
+
+/*=======================================*/

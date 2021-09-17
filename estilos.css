@@ -50,6 +50,7 @@ header{
     width: 30%;
     height: 100vh;
     z-index: 100;
+    transition: all 0.7s;
 }
 
 #btn-menu-hamburguesa:checked~nav{
@@ -115,3 +116,61 @@ button a{
 }
 
 /*=======================================*/
+
+/*MEDIA QUERTY===========================*/
+
+@media (max-width: 500px) {
+    body{
+        padding: 10px;
+        font-size: 1.5em;
+    }
+
+    #nav-menu{
+        width: 100%;
+        background-color: #1f53c5FF;
+    }
+
+    #btn-menu-hamburguesa:checked~nav{
+        left: 0;
+    }
+
+    button{
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width:501px) and (max-width: 800px) {
+
+    body{
+        padding: 20px;
+        font-size: 2em;
+    }
+
+    #nav-menu{
+        background-color: #000000DD;
+        width: 70%;
+    }
+
+    #btn-menu-hamburguesa:checked~nav{
+        left: 30%;
+    }
+
+    button{
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width:801px){
+
+    #nav-menu{
+        width: 30%;
+    }
+
+    #btn-menu-hamburguesa:checked~nav{
+        left: 70%;
+    }
+
+    button{
+        font-size: 1.3em;
+    }
+}

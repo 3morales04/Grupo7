@@ -50,8 +50,5 @@ function checkCorreo(valor) {
 
 
 
-//module.exports = checkDir;
-//module.exports = checkCorreo;
-
-console.log(checkDir("Calle 11N #11-44"));
-console.log(checkCorreo("user@corareo.com"));
+module.exports = checkDir;
+module.exports = checkCorreo;

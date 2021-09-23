@@ -102,10 +102,10 @@ function checkTelefono(valor) {
 }
 
 //Exportación de módulos
-module.exports = checkDir;
-module.exports = checkCorreo;
-module.exports = checkTelefono;
-module.exports = checkNombre;
+module.export = checkDir;
+module.export = checkCorreo;
+module.export = checkTelefono;
+module.export = checkNombre;
 //TEST
 //console.log(checkDir("Calle 1O # 2-3"));
 //console.log(checkDir("12th Simon st"));

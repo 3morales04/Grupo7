@@ -1,6 +1,6 @@
 //4. función para validar DIRECCIÓN
 function checkDir(valor) {
-    const EXPRESION = new RegExp("[0-9a-zA-Z\#+\-?\s*]*");
+    const EXPRESION = new RegExp("^[0-9a-zA-Z\#+\-?\s*]*$");
     let isValid = false;
 
     try{

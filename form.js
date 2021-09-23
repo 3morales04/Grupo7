@@ -5,10 +5,10 @@ function checkDir(valor) {
 
     try{
         if(valor === ""){
-            throw "Valor vacío";
+            throw "valor vacío";
         }else {
             if(String(valor).length > 50){
-                throw "Valor excede el tamaño permitido";
+                throw "valor excede el tamaño permitido";
             } else{
                 if(EXPRESION.test(valor)){
                     isValid = true;
@@ -52,3 +52,8 @@ function checkCorreo(valor) {
 
 module.exports = checkDir;
 module.exports = checkCorreo;
+
+//TEST
+//console.log(checkDir("Calle 1O # 2-3"));
+//console.log(checkDir("12th Simon st"));
+//console.log(checkCorreo("usuario@correo.com"));

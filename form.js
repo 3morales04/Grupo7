@@ -50,8 +50,8 @@ function checkCorreo(valor) {
 
 
 
-module.exports = checkDir;
-module.exports = checkCorreo;
+//module.exports = checkDir;
+//module.exports = checkCorreo;
 
 //TEST
 //console.log(checkDir("Calle 1O # 2-3"));

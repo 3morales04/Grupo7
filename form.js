@@ -46,14 +46,28 @@ function checkCorreo(valor) {
     }
 }
 
+//3. función para validar Telefono
+//3. función para validar Telefono
+function checkTelefono(valor) {
+    var telefono = /^[0-9]{7}$/;
+    if (valor == ""){
+        console.log("Valor vacío");
+    }else{
+        if (telefono.test(valor)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
 //Exportación de módulos
-
-
-
-//module.exports = checkDir;
-//module.exports = checkCorreo;
+module.exports = checkDir;
+module.exports = checkCorreo;
+module.exports = checkTelefono;
 
 //TEST
 //console.log(checkDir("Calle 1O # 2-3"));
 //console.log(checkDir("12th Simon st"));
 //console.log(checkCorreo("usuario@correo.com"));
+console.log(checkTelefono(232343));

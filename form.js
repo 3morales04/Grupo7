@@ -1,3 +1,43 @@
+//1. función para validar Nombre
+/*
+function checkNombre(valor) {
+    const EXPRESION = new RegExp("^[A-Z]+$","i");// Letras y espacios, pueden llevar acentos.
+    let isValid = false;
+
+    try{
+        if(valor === ""){
+            throw "valor vacío";
+        }else {
+            if(String(valor).length < 4  && String(valor).length > 30 ){
+                throw "valor excede el tamaño permitido";
+            } else{
+                if(EXPRESION.test(valor)){
+                    isValid = true;
+                };
+            }
+        }
+    }catch(error){
+        console.log(error);
+    }finally{
+        return isValid;
+    }
+}
+*/git
+
+function checkNombre(valor) {
+    if (valor == "") {
+        alert("Escriba su Nombre");
+        valor.focus();
+        return false;
+    }
+    if (!/^[a-zA-Z]*$/g.test(valor)) {
+        alert("Caracteres inválidos, solo letras");
+        valor.focus();
+        return false;
+    }
+}
+
+
 //4. función para validar DIRECCIÓN
 function checkDir(valor) {
     const EXPRESION = new RegExp("^[0-9a-zA-Z\#+\-?\s*]*$");
@@ -65,7 +105,7 @@ function checkTelefono(valor) {
 module.exports = checkDir;
 module.exports = checkCorreo;
 module.exports = checkTelefono;
-
+module.exports = checkNombre;
 //TEST
 //console.log(checkDir("Calle 1O # 2-3"));
 //console.log(checkDir("12th Simon st"));

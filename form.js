@@ -22,8 +22,9 @@ function checkNombre(valor) {
         return isValid;
     }
 }
-*/git
+*/
 
+//1. función para validar Nombre
 function checkNombre(valor) {
     if (valor == "") {
         alert("Escriba su Nombre");
@@ -87,7 +88,6 @@ function checkCorreo(valor) {
 }
 
 //3. función para validar Telefono
-//3. función para validar Telefono
 function checkTelefono(valor) {
     var telefono = /^[0-9]{7}$/;
     if (valor == ""){
@@ -110,4 +110,5 @@ module.exports = checkNombre;
 //console.log(checkDir("Calle 1O # 2-3"));
 //console.log(checkDir("12th Simon st"));
 //console.log(checkCorreo("usuario@correo.com"));
-console.log(checkTelefono(232343));
+//console.log(checkTelefono(232343));
+//console.log(checkNombre("Nombre Apellido"));

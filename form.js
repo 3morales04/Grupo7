@@ -1,5 +1,4 @@
 //1. función para validar Nombre 
-
 function checkNombre(valor) {
     const EXPRESION = /^[a-zA-ZÁ-ÿ\s]*$/; // Letras y espacios, pueden llevar acentos.
     let isValid = false;
@@ -105,15 +104,11 @@ function checkContrasena(valor){
 
 //Exportación de módulos
 
-module.exports = checkDir;
-module.exports = checkCorreo;
-module.exports = checkTelefono;
-module.exports = checkNombre;
-module.exports = checkContrasena;
+module.exports = {checkDir, checkCorreo, checkTelefono, checkNombre, checkContrasena}
 
-console.log(checkDir("Calle 1O # 2-3"));
-console.log(checkDir("12th Simon st"));
-console.log(checkCorreo("usuario@correo.com"));
-console.log(checkTelefono(232343));
-console.log(checkNombre("Nombre Apellido"));
-console.log(checkContrasena("Maicol2019"));
+//console.log(checkDir("Calle 1O # 2-3"));
+//console.log(checkDir("12th Simon st"));
+//console.log(checkCorreo("usuario@correo.com"));
+//console.log(checkTelefono(232343));
+//console.log(checkNombre("Nombre Apellido"));
+//console.log(checkContrasena("Maicol2019"));

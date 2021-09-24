@@ -45,7 +45,6 @@ function checkDir(valor) {
         return isValid;
     }
 }
-//console.log(checkDir("Calle 1O # 2-3"));
 
 //5. función para validar CORREO
 function checkCorreo(valor) {
@@ -98,4 +97,4 @@ module.exports = checkNombre;
 //console.log(checkDir("12th Simon st"));
 //console.log(checkCorreo("usuario@correo.com"));
 //console.log(checkTelefono(232343));
-console.log(checkNombre("Nombre Apellido"));
+//console.log(checkNombre("Nombre Apellido"));

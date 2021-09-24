@@ -1,4 +1,5 @@
-//1. función para validar Nombre
+//1. función para validar Nombre 
+
 function checkNombre(valor) {
     const EXPRESION = /^[a-zA-ZÁ-ÿ\s]*$/; // Letras y espacios, pueden llevar acentos.
     let isValid = false;
@@ -84,17 +85,33 @@ function checkTelefono(valor) {
     }
 }
 
+function checkContrasena(valor){
+    var contrasena =/^[0-9a-zA-Z]+$/;
+    if(valor == "" || valor==null || valor.length==0){
+        alert("Contraseña vacía");
+    }else{
+    if(valor.length<8){
+        alert("Mínimo 8 caracteres")
+    }else{
+        if(contrasena.test(valor)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 //Exportación de módulos
-/*
+
 module.exports = checkDir;
 module.exports = checkCorreo;
 module.exports = checkTelefono;
 module.exports = checkNombre;
-*/
+module.exports = checkContrasena;
 
-//TEST
-//console.log(checkDir("Calle 1O # 2-3"));
-//console.log(checkDir("12th Simon st"));
-//console.log(checkCorreo("usuario@correo.com"));
-//console.log(checkTelefono(232343));
-//console.log(checkNombre("Nombre Apellido"));
+console.log(checkDir("Calle 1O # 2-3"));
+console.log(checkDir("12th Simon st"));
+console.log(checkCorreo("usuario@correo.com"));
+console.log(checkTelefono(232343));
+console.log(checkNombre("Nombre Apellido"));
+console.log(checkContrasena("Maicol2019"));

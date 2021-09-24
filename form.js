@@ -99,6 +99,8 @@ function checkContrasena(valor){
             return false;
         }
     }
+}
+}
 
 
 //Exportación de módulos

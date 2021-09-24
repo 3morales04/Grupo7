@@ -1,14 +1,13 @@
 //1. función para validar Nombre
-/*
 function checkNombre(valor) {
-    const EXPRESION = new RegExp("^[A-Z]+$","i");// Letras y espacios, pueden llevar acentos.
+    const EXPRESION = /^[a-zA-ZÁ-ÿ\s]*$/; // Letras y espacios, pueden llevar acentos.
     let isValid = false;
 
     try{
         if(valor === ""){
             throw "valor vacío";
         }else {
-            if(String(valor).length < 4  && String(valor).length > 30 ){
+            if(valor.length < 4  && String(valor).length > 30 ){
                 throw "valor excede el tamaño permitido";
             } else{
                 if(EXPRESION.test(valor)){
@@ -20,21 +19,6 @@ function checkNombre(valor) {
         console.log(error);
     }finally{
         return isValid;
-    }
-}
-*/
-
-//1. función para validar Nombre
-function checkNombre(valor) {
-    if (valor == "") {
-        alert("Escriba su Nombre");
-        valor.focus();
-        return false;
-    }
-    if (!/^[a-zA-Z]*$/g.test(valor)) {
-        alert("Caracteres inválidos, solo letras");
-        valor.focus();
-        return false;
     }
 }
 

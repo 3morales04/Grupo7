@@ -104,7 +104,7 @@ function checkContrasena(valor){
 
 //Exportación de módulos
 
-module.exports = {checkDir, checkCorreo, checkTelefono, checkNombre, checkContrasena}
+//module.exports = {checkDir, checkCorreo, checkTelefono, checkNombre, checkContrasena}
 
 //console.log(checkDir("Calle 1O # 2-3"));
 //console.log(checkDir("12th Simon st"));

@@ -22,6 +22,22 @@ function checkNombre(valor) {
     }
 }
 
+//2. función para validar GÉNERO
+function checkGenero(valor) {
+    let isValid = false;
+
+    try{
+        valor.forEach(element => {
+            isValid ||= element.checked; 
+        });
+    }catch(error){
+        console.log(error);
+    }finally{
+        console.log(valor);
+        return isValid;
+    }
+}
+
 //4. función para validar DIRECCIÓN
 function checkDir(valor) {
     const EXPRESION = /^[0-9a-zA-Z\#\-\s]*$/;
@@ -54,14 +70,8 @@ function checkCorreo(valor) {
     try{
         if(valor === ""){
             throw "valor vacío";
-        }else {
-            if(valor.length > 50){
-                throw "valor excede el tamaño permitido";
-            } else{
-                if(EXPRESION.test(valor)){
-                    isValid = true;
-                };
-            }
+        }else if(EXPRESION.test(valor)){
+            isValid = true;
         }
     }catch(error){
         console.log(error);
@@ -89,22 +99,28 @@ function checkContrasena(valor){
     if(valor == "" || valor==null || valor.length==0){
         alert("Contraseña vacía");
     }else{
-    if(valor.length<8){
-        alert("Mínimo 8 caracteres")
-    }else{
-        if(contrasena.test(valor)){
-            return true;
+        if(valor.length<8){
+            alert("Mínimo 8 caracteres")
         }else{
-            return false;
+            if(contrasena.test(valor)){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
-}
 }
 
 
 //Exportación de módulos
-
-module.exports = {checkDir, checkCorreo, checkTelefono, checkNombre, checkContrasena}
+module.exports = {
+    checkNombre, 
+    checkGenero, 
+    checkTelefono, 
+    checkDir, 
+    checkCorreo, 
+    checkContrasena
+};
 
 //console.log(checkDir("Calle 1O # 2-3"));
 //console.log(checkDir("12th Simon st"));

@@ -7,7 +7,7 @@
     <title>Registro</title><br>
 </head>
 <body>
-    <form id="form-registro" action="#" method="POST">Registro<br>
+    <form id="form-registro" action="" method="POST">Registro<br>
         <br>
         <label for="Nombre">Nombre</label><br>
         <input type="name" name="Nombre" id="Nombre" size="20" required/><br>
@@ -31,10 +31,11 @@
         <input type="password" id="Contrasena" required/><br>
         
         <br>
-        <input type="submit" value="Registrar" id="btn-submit-form"/>
+        <input type="submit" value="Registrar" id="btn-submit-form" onclick="agregarRegistro()"/>
     
     </form>
 
     <script src="./form.js" type="module"></script>
+    <script src="./registro.js" type="module"></script>
 </body>
 </html>

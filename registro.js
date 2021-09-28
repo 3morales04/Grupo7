@@ -13,11 +13,11 @@ function agregarRegistro(){
     let _contrasena = document.getElementById("Contrasena").value;
 
     if(
-        FORM.checkNombre(_nombre) || 
-        FORM.checkGenero(_genero) ||
-        FORM.checkTelefono(_telefono) ||
-        FORM.checkDir(_direccion) ||
-        FORM.checkCorreo(_correo) ||
+        FORM.checkNombre(_nombre) && 
+        FORM.checkGenero(_genero) &&
+        FORM.checkTelefono(_telefono) &&
+        FORM.checkDir(_direccion) &&
+        FORM.checkCorreo(_correo) &&
         FORM.checkContrasena(_contrasena) ){
 
             registros.push(

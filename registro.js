@@ -22,15 +22,20 @@ function agregarRegistro(){
             registros.push(
                 {
                     nombre:_nombre,
-                    genero:_genero,
+                    genero:FORM.getRadioOption(_genero),
                     telefono:_telefono,
                     direccion:_direccion, 
                     correo:_correo,
                     contrasena:_contrasena 
                 }
             );
-    }
-    alert(registros);
+            
+            alert(registros);
+            document.getElementById("form-registro").reset();
+        } else {
+            alert("Hay campos incorectos");
+        }
+    
 }
 
 
@@ -42,6 +47,7 @@ function ordenarArreglo(arreglo){
     console.log(arreglo);
 
 }
+
 //Exportación de módulos
 module.exports = {
     agregarRegistro, ordenarArreglo

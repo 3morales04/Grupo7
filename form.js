@@ -112,6 +112,24 @@ function checkContrasena(valor){
     }
 }
 
+//Obtener opción seleccionada
+///*
+function getRadioOption(radios){    
+    let option;
+    try{
+        radios.forEach(element => {
+            if(element.checked){
+                option = element.value;
+                //break;
+            }
+        });
+    }catch(error){
+        console.log(error);
+    }finally{
+        return option;
+    }
+}
+//*/
 
 //Exportación de módulos
 module.exports = {
@@ -120,7 +138,8 @@ module.exports = {
     checkTelefono, 
     checkDir, 
     checkCorreo, 
-    checkContrasena
+    checkContrasena,
+    getRadioOption
 };
 
 //console.log(checkDir("Calle 1O # 2-3"));

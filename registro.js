@@ -44,15 +44,15 @@ function ordenarArreglo(arreglo){
 
 }
 
-//Funcion para filtrar correos
+//Funcion para filtrar
 function filtrarCorreo(arreglo) {
     arreglo = Array.from(registros);
     arreglo.forEach((e) => {
         if(/@gmail.com/i.test(e.correo)) results.push(e.correo);
     })
+    console.log(arreglo)
     return arreglo;
 }
-console.log(filtrarCorreo(arreglo))
 //Exportación de módulos
 module.exports = {
     agregarRegistro, ordenarArreglo, filtrarCorreo

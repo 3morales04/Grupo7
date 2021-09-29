@@ -48,7 +48,7 @@ function ordenarArreglo(arreglo){
 
 }
 
-//Funcion para filtrar
+//Funcion para filtrar correo
 function filtrarCorreo(arreglo) {
     arreglo = Array.from(registros);
     arreglo.forEach((e) => {

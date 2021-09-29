@@ -33,7 +33,16 @@ function agregarRegistro(){
     alert(registros);
 }
 
+
+function ordenarArreglo(arreglo){
+    arreglo = Array.from(registros);//si es necesario que se vuelva a crear un arreglo?
+    arreglo = registros.map(nombre=>nombre.textContent);
+    console.log(arreglo);
+    arreglo.sort();
+    console.log(arreglo);
+
+}
 //Exportación de módulos
 module.exports = {
-    agregarRegistro
+    agregarRegistro, ordenarArreglo
 };

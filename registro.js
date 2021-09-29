@@ -4,7 +4,6 @@ const FORM = require('./form.js');
 const registros = new Array();
 
 function agregarRegistro(){
-    console.log("Hola1");
     let _nombre = document.getElementById("Nombre").value;
     let _genero = document.getElementsByName("genero");
     let _telefono = document.getElementById("Telefono").value;

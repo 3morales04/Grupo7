@@ -25,15 +25,15 @@ function checkNombre(valor) {
 //2. función para validar GÉNERO
 function checkGenero(valor) {
     let isValid = false;
-
+    
     try{
         valor.forEach(element => {
-            isValid ||= element.checked; 
+            isValid ||= element.checked;
+            //console.log(isValid); 
         });
     }catch(error){
         console.log(error);
     }finally{
-        console.log(valor);
         return isValid;
     }
 }
@@ -72,6 +72,7 @@ function checkCorreo(valor) {
             throw "valor vacío";
         }else if(EXPRESION.test(valor)){
             isValid = true;
+            console.log(isValid);
         }
     }catch(error){
         console.log(error);
@@ -128,3 +129,4 @@ module.exports = {
 //console.log(checkTelefono(232343));
 //console.log(checkNombre("Nombre Apellido"));
 //console.log(checkContrasena("Maicol2019"));
+//checkGenero([false,true,false]);

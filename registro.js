@@ -4,7 +4,6 @@ const FORM = require('./form.js');
 const registros = new Array();
 
 function agregarRegistro(){
-    console.log("Hola1");
     let _nombre = document.getElementById("Nombre").value;
     let _genero = document.getElementsByName("genero");
     let _telefono = document.getElementById("Telefono").value;
@@ -23,15 +22,20 @@ function agregarRegistro(){
             registros.push(
                 {
                     nombre:_nombre,
-                    genero:_genero,
+                    genero:FORM.getRadioOption(_genero),
                     telefono:_telefono,
                     direccion:_direccion, 
                     correo:_correo,
                     contrasena:_contrasena 
                 }
             );
-    }
-    alert(registros);
+            
+            alert(registros);
+            document.getElementById("form-registro").reset();
+        } else {
+            alert("Hay campos incorectos");
+        }
+    
 }
 
 

@@ -49,7 +49,7 @@ function ordenarArreglo(arreglo){
     })
     return arreglo;
 }
-//console.log(ordenarArreglo(registros))
+console.log(ordenarArreglo(registros))
 
 
 //Funcion para filtrar correo
@@ -60,7 +60,7 @@ function filtrarCorreo(arreglo) {
     })
     return results;
 }
-console.log(filtrarCorreo(singers))
+console.log(filtrarCorreo(registros))
 //Exportación de módulos
 module.exports = {
     agregarRegistro, ordenarArreglo, filtrarCorreo

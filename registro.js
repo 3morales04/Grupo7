@@ -39,13 +39,18 @@ function agregarRegistro(){
 }
 
 function ordenarArreglo(arreglo){
-    arreglo = Array.from(registros);//si es necesario que se vuelva a crear un arreglo?
-    arreglo = registros.map(nombre=>nombre.textContent);
-    console.log(arreglo);
-    arreglo.sort();
-    console.log(arreglo);
-
+    arreglo.sort(function(a, b){
+        var nombreA=a.nombre.toLowerCase(), nombreB=b.nombre.toLowerCase()
+        if (nombreA < nombreB) //sort string ascending
+            return -1 
+        if (nombreA > nombreB)
+            return 1
+        return 0 //default return value (no sorting)
+    })
+    return arreglo;
 }
+//console.log(ordenarArreglo(registros))
+
 
 //Funcion para filtrar correo
 function filtrarCorreo(arreglo) {

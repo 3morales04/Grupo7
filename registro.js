@@ -4,7 +4,6 @@ const FORM = require('./form.js');
 const registros = new Array();
 
 function agregarRegistro(){
-    console.log("Hola1");
     let _nombre = document.getElementById("Nombre").value;
     let _genero = document.getElementsByName("genero");
     let _telefono = document.getElementById("Telefono").value;
@@ -23,27 +22,46 @@ function agregarRegistro(){
             registros.push(
                 {
                     nombre:_nombre,
-                    genero:_genero,
+                    genero:FORM.getRadioOption(_genero),
                     telefono:_telefono,
                     direccion:_direccion, 
                     correo:_correo,
                     contrasena:_contrasena 
                 }
             );
-    }
-    alert(registros);
+            
+            alert(registros);
+            document.getElementById("form-registro").reset();
+        } else {
+            alert("Hay campos incorectos");
+        }
+    
 }
-
 
 function ordenarArreglo(arreglo){
-    arreglo = Array.from(registros);//si es necesario que se vuelva a crear un arreglo?
-    arreglo = registros.map(nombre=>nombre.textContent);
-    console.log(arreglo);
-    arreglo.sort();
-    console.log(arreglo);
-
+    arreglo.sort(function(a, b){
+        var nombreA=a.nombre.toLowerCase(), nombreB=b.nombre.toLowerCase()
+        if (nombreA < nombreB) //sort string ascending
+            return -1 
+        if (nombreA > nombreB)
+            return 1
+        return 0 //default return value (no sorting)
+    })
+    return arreglo;
 }
+console.log(ordenarArreglo(registros))
+
+
+//Funcion para filtrar correo
+function filtrarCorreo(arreglo) {
+    let results=[];
+    arreglo.forEach((e) => {
+        if(/@gmail.com/i.test(e.correo)) results.push(e.correo);
+    })
+    return results;
+}
+console.log(filtrarCorreo(registros))
 //Exportación de módulos
 module.exports = {
-    agregarRegistro, ordenarArreglo
+    agregarRegistro, ordenarArreglo, filtrarCorreo
 };

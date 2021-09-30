@@ -38,7 +38,6 @@ function agregarRegistro(){
     
 }
 
-
 function ordenarArreglo(arreglo){
     arreglo = Array.from(registros);//si es necesario que se vuelva a crear un arreglo?
     arreglo = registros.map(nombre=>nombre.textContent);
@@ -50,13 +49,13 @@ function ordenarArreglo(arreglo){
 
 //Funcion para filtrar correo
 function filtrarCorreo(arreglo) {
-    arreglo = Array.from(registros);
+    let results=[];
     arreglo.forEach((e) => {
         if(/@gmail.com/i.test(e.correo)) results.push(e.correo);
     })
-    console.log(arreglo)
-    return arreglo;
+    return results;
 }
+console.log(filtrarCorreo(singers))
 //Exportación de módulos
 module.exports = {
     agregarRegistro, ordenarArreglo, filtrarCorreo

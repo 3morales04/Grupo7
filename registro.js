@@ -1,55 +1,55 @@
-const FORM = require('./form.js');
+//Declaración del arreglo global donde se almacenan los registros
+let registros=[];
 
-//1. Arreglo de objetos
-const registros = new Array();
 
 function agregarRegistro(){
-    let _nombre = document.getElementById("Nombre").value;
-    let _genero = document.getElementsByName("genero");
-    let _telefono = document.getElementById("Telefono").value;
-    let _direccion = document.getElementById("Direccion").value;
-    let _correo = document.getElementById("Correo").value;
-    let _contrasena = document.getElementById("Contrasena").value;
+    //Función que toma la información ingresada en el formulario registro y crear el objeto.
 
-    if(
-        FORM.checkNombre(_nombre) && 
-        FORM.checkGenero(_genero) &&
-        FORM.checkTelefono(_telefono) &&
-        FORM.checkDir(_direccion) &&
-        FORM.checkCorreo(_correo) &&
-        FORM.checkContrasena(_contrasena) ){
+    function usuario(nombre,genero,telefono,direccion,correo,contrasena){
+    this.nombre=nombre;
+    this.genero=genero;
+    this.telefono=telefono;
+    this.direccion=direccion;
+    this.correo=correo;
+    this.contrasena=contrasena;
+    }
 
-            registros.push(
-                {
-                    nombre:_nombre,
-                    genero:FORM.getRadioOption(_genero),
-                    telefono:_telefono,
-                    direccion:_direccion, 
-                    correo:_correo,
-                    contrasena:_contrasena 
-                }
-            );
-            
-            alert(registros);
-            document.getElementById("form-registro").reset();
-        } else {
-            alert("Hay campos incorectos");
-        }
-    
+    var nombre=document.getElementById('nombre').value;
+    var genero=document.getElementById('genero').value;
+    var telefono=document.getElementById('telefono').value;
+    var direccion=document.getElementById('direccion').value;
+    var correo=document.getElementById('correo').value;
+    var contrasena=document.getElementById('contrasena').value;
+
+    //Crear un nuevo objeto usuario
+    var user=new usuario(nombre,genero,telefono,direccion,correo,contrasena);
+
+
+
+    registros.push(user);
+    registros.forEach(registros => {
+    console.log(registros.nombre, registros.genero, registros.telefono, registros.direccion, registros.correo, registros.contrasena);
+    });
+
 }
 
+//Funcion para ordenar Arreglo
 function ordenarArreglo(arreglo){
     arreglo.sort(function(a, b){
-        var nombreA=a.nombre.toLowerCase(), nombreB=b.nombre.toLowerCase()
-        if (nombreA < nombreB) //sort string ascending
+        var NombreA=a.Nombre.toLowerCase(), NombreB=b.Nombre.toLowerCase()
+        if (NombreA < NombreB) //sort string ascending
             return -1 
-        if (nombreA > nombreB)
+            
+        if (NombreA > NombreB)
             return 1
         return 0 //default return value (no sorting)
     })
-    return arreglo;
+    console.log(ordenarArreglo(registros))
+    //return arreglo;
 }
-console.log(ordenarArreglo(registros))
+
+
+
 
 
 //Funcion para filtrar correo
@@ -57,11 +57,16 @@ function filtrarCorreo(arreglo) {
     let results=[];
     arreglo.forEach((e) => {
         if(/@gmail.com/i.test(e.correo)) results.push(e.correo);
+        
     })
-    return results;
+    console.log(filtrarCorreo(registros))
+    //return results;
 }
-console.log(filtrarCorreo(registros))
+
+
+
+
+
 //Exportación de módulos
-module.exports = {
-    agregarRegistro, ordenarArreglo, filtrarCorreo
-};
+
+module.exports = {registros, ordenarArreglo, filtrarCorreo, agregarRegistro};

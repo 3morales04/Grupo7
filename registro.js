@@ -36,7 +36,7 @@ function agregarRegistro(){
 //Funcion para ordenar Arreglo
 function ordenarArreglo(arreglo){
     arreglo.sort(function(a, b){
-        var NombreA=a.Nombre.toLowerCase(), NombreB=b.Nombre.toLowerCase()
+        var NombreA=a.nombre.toLowerCase(), NombreB=b.nombre.toLowerCase()
         if (NombreA < NombreB) //sort string ascending
             return -1 
             
@@ -44,9 +44,9 @@ function ordenarArreglo(arreglo){
             return 1
         return 0 //default return value (no sorting)
     })
-    console.log(ordenarArreglo(registros))
-    //return arreglo;
+    return arreglo;
 }
+console.log(ordenarArreglo(registros))
 
 
 
@@ -59,9 +59,9 @@ function filtrarCorreo(arreglo) {
         if(/@gmail.com/i.test(e.correo)) results.push(e.correo);
         
     })
-    console.log(filtrarCorreo(registros))
-    //return results;
+    return results;
 }
+console.log(filtrarCorreo(registros))
 
 
 

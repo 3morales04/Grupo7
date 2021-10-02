@@ -25,12 +25,17 @@ function checkNombre(valor) {
 //2. función para validar GÉNERO
 function checkGenero(valor) {
     let isValid = false;
+    let count = 0;
     
     try{
         valor.forEach(element => {
-            isValid ||= element.checked;
-            //console.log(isValid); 
+            if(element.value == true){
+                count++;
+            }
         });
+        if(count == 1){
+            isValid = true;
+        }
     }catch(error){
         console.log(error);
     }finally{
@@ -120,7 +125,6 @@ function getRadioOption(radios){
         radios.forEach(element => {
             if(element.checked){
                 option = element.value;
-                //break;
             }
         });
     }catch(error){
@@ -148,4 +152,4 @@ module.exports = {
 //console.log(checkTelefono(232343));
 //console.log(checkNombre("Nombre Apellido"));
 //console.log(checkContrasena("Maicol2019"));
-//checkGenero([false,true,false]);
+//checkGenero([false,false,true,false]);

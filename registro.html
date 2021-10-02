@@ -1,41 +1,45 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilos.css"/>
+    <link rel="stylesheet" href="./estilos.css" />
     <title>Registro</title><br>
 </head>
+
+
 <body>
     <form id="form-registro" action="" method="POST">Registro<br>
         <br>
         <label for="Nombre">Nombre</label><br>
-        <input type="name" name="Nombre" id="Nombre" size="20" required/><br>
-        
+        <input type="name" name="Nombre" id="Nombre" size="20" required /><br>
+
         <label>Género</label><br>
-        <input type="radio" id="M" name="genero" value="M" required/>
+        <input type="radio" id="M" name="genero" value="M" required />
         <label for="M">M</label>
-        <input type="radio" id="F" name="genero" value="F" required/>
+        <input type="radio" id="F" name="genero" value="F" required />
         <label for="F">F</label><br>
-        
+
         <label for="Telefono">Teléfono</label><br>
-        <input type="number" id="Telefono" required/><br>
-        
+        <input type="number" id="Telefono" required /><br>
+
         <label for="Direccion">Dirección</label><br>
-        <input type="text" id="Direccion" required/><br>
-        
+        <input type="text" id="Direccion" required /><br>
+
         <label for="Correo">Correo</label><br>
-        <input type="email" id="Correo" required/><br>
-        
+        <input type="email" id="Correo" required /><br>
+
         <label for="Contrasena">Contraseña</label><br>
-        <input type="password" id="Contrasena" required/><br>
-        
+        <input type="password" id="Contrasena" required /><br>
+
         <br>
-        <input type="submit" value="Registrar" id="btn-submit-form" onclick="agregarRegistro()"/>
-    
+        <input type="submit" value="Registrar" id="btn-submit-form" onclick="agregarRegistro()" />
+
     </form>
 
-    <script src="./form.js" type="module"></script>
-    <script src="./registro.js" type="module"></script>
+    <script type="module" src="./form.js"></script>
+    <script type="module" src="./registro.js"></script>
 </body>
+
 </html>

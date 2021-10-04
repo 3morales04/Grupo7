@@ -3,35 +3,25 @@ let registros=[];
 
 
 function agregarRegistro(){
-    //Función que toma la información ingresada en el formulario registro y crear el objeto.
 
-    function usuario(nombre,genero,telefono,direccion,correo,contrasena){
-    this.nombre=nombre;
-    this.genero=genero;
-    this.telefono=telefono;
-    this.direccion=direccion;
-    this.correo=correo;
-    this.contrasena=contrasena;
-    }
+    let nombre=document.getElementById('nombre').value;
+    let genero=document.getElementsByName('genero').values;
+    let telefono=document.getElementById('telefono').value;
+    let direccion=document.getElementById('direccion').value;
+    let correo=document.getElementById('correo').value;
+    let contrasena=document.getElementById('contrasena').value;
 
-    var nombre=document.getElementById('nombre').value;
-    var genero=document.getElementById('genero').value;
-    var telefono=document.getElementById('telefono').value;
-    var direccion=document.getElementById('direccion').value;
-    var correo=document.getElementById('correo').value;
-    var contrasena=document.getElementById('contrasena').value;
-
-    //Crear un nuevo objeto usuario
-    var user=new usuario(nombre,genero,telefono,direccion,correo,contrasena);
-
-
-
-    registros.push(user);
-    registros.forEach(registros => {
-    console.log(registros.nombre, registros.genero, registros.telefono, registros.direccion, registros.correo, registros.contrasena);
+    registros.push({
+        nombre,
+        genero,
+        telefono,
+        direccion,
+        correo,
+        contrasena
     });
-
+    console.log(registros);
 }
+
 
 //Funcion para ordenar Arreglo
 function ordenarArreglo(arreglo){
@@ -48,10 +38,6 @@ function ordenarArreglo(arreglo){
 }
 console.log(ordenarArreglo(registros))
 
-
-
-
-
 //Funcion para filtrar correo
 function filtrarCorreo(arreglo) {
     let results=[];
@@ -63,10 +49,10 @@ function filtrarCorreo(arreglo) {
 }
 console.log(filtrarCorreo(registros))
 
-
-
-
-
 //Exportación de módulos
-
-module.exports = {registros, ordenarArreglo, filtrarCorreo, agregarRegistro};
+module.exports = {
+    registros,
+    ordenarArreglo,
+    filtrarCorreo,
+    agregarRegistro
+};

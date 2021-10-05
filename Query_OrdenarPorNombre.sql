@@ -1,6 +1,6 @@
 /*LUIS*/
-USE TuTurismoDB; /*cambiar*/
+/*USE nombre_db;*/
 
-SELECT nombre, telefono, direccion, correo /*preguntar*/
+SELECT nombre, telefono, direccion, correo
 FROM Usuarios
 ORDER BY nombre ASC;

@@ -1,5 +1,5 @@
 /*MAHIDA*/
-USE TuTurismoDB;
+/*USE nombre_db;*/
 
 SELECT * 
 FROM Usuarios

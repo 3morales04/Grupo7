@@ -1,5 +1,6 @@
+/*MAHIDA*/
 USE TuTurismoDB;
 
-SELECT count(correo) 
-FROM TuTurismoDB
+SELECT * 
+FROM Usuarios
 WHERE correo LIKE "%gmail.com";

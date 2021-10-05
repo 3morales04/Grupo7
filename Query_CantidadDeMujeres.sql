@@ -1,5 +1,6 @@
-USE TuTurismoDB;
+/*NELSON*/
+USE TuTurismoDB; /*cambiar*/
 
-SELECT count(genero) 
-FROM usuario 
-WHERE genero = "F";
+SELECT count(genero) /*preguntar*/
+FROM Usuarios
+WHERE genero = "femenino";

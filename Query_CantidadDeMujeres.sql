@@ -3,4 +3,4 @@
 
 SELECT count(genero)
 FROM Usuarios
-WHERE genero = "femenino";
+WHERE genero = "f";

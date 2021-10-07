@@ -124,7 +124,10 @@ button a{
         padding: 10px;
         font-size: 1.5em;
     }
-
+    form{
+        width: 100%;
+        align-items: center;
+    }
     #nav-menu{
         width: 100%;
         background-color: #1f53c5FF;
@@ -145,7 +148,10 @@ button a{
         padding: 20px;
         font-size: 2em;
     }
-
+    form{
+        width: 70%;
+        align-items: center;
+    }
     #nav-menu{
         background-color: #000000DD;
         width: 70%;

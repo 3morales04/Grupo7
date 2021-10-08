@@ -34,6 +34,7 @@ function agregarRegistro(){
 }
 
 
+
 //Funcion para ordenar Arreglo
 function ordenarArreglo(arreglo){
     arreglo.sort(function(a, b){

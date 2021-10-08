@@ -1,25 +1,35 @@
-//Declaración del arreglo global donde se almacenan los registros
+import * as form from "./form.js";
+
 let registros=[];
 
-
 function agregarRegistro(){
+    let _nombre=document.getElementById("Nombre").value;
+    let _genero=document.getElementsByName("Genero");
+    let _telefono=document.getElementById("Telefono").value;
+    let _direccion=document.getElementById("Direccion").value;
+    let _correo=document.getElementById("Correo").value;
+    let _contrasena=document.getElementById("Contrasena").value;
 
-    let nombre=document.getElementById('nombre').value;
-    let genero=document.getElementsByName('genero').values;
-    let telefono=document.getElementById('telefono').value;
-    let direccion=document.getElementById('direccion').value;
-    let correo=document.getElementById('correo').value;
-    let contrasena=document.getElementById('contrasena').value;
-
-    registros.push({
-        nombre,
-        genero,
-        telefono,
-        direccion,
-        correo,
-        contrasena
-    });
-    console.log(registros);
+    if(
+        form.checkNombre(_nombre) &&
+        form.checkGenero(_genero) &&
+        form.checkTelefono(_telefono) &&
+        form.checkDir (_direccion) &&
+        form.checkCorreo(_correo) &&
+        form.checkContrasena(_contrasena)
+        ){
+            const usuario = {
+                nombre: _nombre,
+                genero: getRadioOption(_genero),
+                telefono: _telefono,
+                direccion: _direccion,
+                correo: _correo,
+                contrasena: _contrasena
+            }
+            registros.push(usuario);
+    }
+    
+    alert(registros);
 }
 
 
@@ -36,23 +46,27 @@ function ordenarArreglo(arreglo){
     })
     return arreglo;
 }
-console.log(ordenarArreglo(registros))
+//console.log(ordenarArreglo(registros))
 
 //Funcion para filtrar correo
 function filtrarCorreo(arreglo) {
     let results=[];
     arreglo.forEach((e) => {
-        if(/@gmail.com/i.test(e.correo)) results.push(e.correo);
-        
+        if(/@gmail.com/i.test(e.correo)) results.push(e.correo);        
     })
     return results;
 }
-console.log(filtrarCorreo(registros))
+//console.log(filtrarCorreo(registros))
 
 //Exportación de módulos
-module.exports = {
+export {
     registros,
     ordenarArreglo,
     filtrarCorreo,
     agregarRegistro
 };
+
+//function saludar(){alert("HOLAAA")}
+
+const btnRegistrar = document.getElementById("btn-submit-form");
+btnRegistrar.addEventListener("click",agregarRegistro);

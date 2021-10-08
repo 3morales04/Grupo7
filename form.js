@@ -5,10 +5,10 @@ function checkNombre(valor) {
 
     try{
         if(valor === ""){
-            throw "valor vacío";
+            throw "El campo nombre está vacío";
         }else {
             if(valor.length < 4  && String(valor).length > 30 ){
-                throw "valor excede el tamaño permitido";
+                throw "El nombre excede el tamaño permitido";
             } else{
                 if(EXPRESION.test(valor)){
                     isValid = true;
@@ -16,7 +16,7 @@ function checkNombre(valor) {
             }
         }
     }catch(error){
-        console.log(error);
+        alert(error);
     }finally{
         return isValid;
     }
@@ -29,15 +29,17 @@ function checkGenero(valor) {
     
     try{
         valor.forEach(element => {
-            if(element.value == true){
+            if(element.checked){
                 count++;
             }
         });
         if(count == 1){
             isValid = true;
+        }else{
+            throw "El campo genero es incorrecto";
         }
     }catch(error){
-        console.log(error);
+        alert(error);
     }finally{
         return isValid;
     }
@@ -50,10 +52,10 @@ function checkDir(valor) {
 
     try{
         if(valor === ""){
-            throw "valor vacío";
+            throw "El campo dirección está vacío";
         }else {
             if(valor.length > 50){
-                throw "valor excede el tamaño permitido";
+                throw "Dirección excede el tamaño permitido";
             } else{
                 if(EXPRESION.test(valor)){
                     isValid = true;
@@ -61,7 +63,7 @@ function checkDir(valor) {
             }
         }
     }catch(error){
-        console.log(error);
+        alert(error);
     }finally{
         return isValid;
     }
@@ -74,13 +76,12 @@ function checkCorreo(valor) {
 
     try{
         if(valor === ""){
-            throw "valor vacío";
+            throw "El campo correo está vacío";
         }else if(EXPRESION.test(valor)){
             isValid = true;
-            console.log(isValid);
         }
     }catch(error){
-        console.log(error);
+        alert(error);
     }finally{
         return isValid;
     }
@@ -90,7 +91,7 @@ function checkCorreo(valor) {
 function checkTelefono(valor) {
     var telefono = /^[0-9]{7}$/;
     if (valor == ""){
-        console.log("Valor vacío");
+        alert("El campo teléfono está vacío");
     }else{
         if (telefono.test(valor)){
             return true;
@@ -136,7 +137,7 @@ function getRadioOption(radios){
 //*/
 
 //Exportación de módulos
-module.exports = {
+export {
     checkNombre, 
     checkGenero, 
     checkTelefono, 

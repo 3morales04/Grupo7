@@ -10,6 +10,17 @@ function agregarRegistro(){
     let _correo=document.getElementById("Correo").value;
     let _contrasena=document.getElementById("Contrasena").value;
 
+    const usuario = {
+        nombre: _nombre,
+        genero: form.getRadioOption(_genero),
+        telefono: _telefono,
+        direccion: _direccion,
+        correo: _correo,
+        contrasena: _contrasena
+    }
+    registros.push(usuario);
+    console.log(registros);
+
     if(
         form.checkNombre(_nombre) &&
         form.checkGenero(_genero) &&
@@ -20,7 +31,7 @@ function agregarRegistro(){
         ){
             const usuario = {
                 nombre: _nombre,
-                genero: getRadioOption(_genero),
+                genero: form.getRadioOption(_genero),
                 telefono: _telefono,
                 direccion: _direccion,
                 correo: _correo,

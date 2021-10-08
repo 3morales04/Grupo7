@@ -10,17 +10,6 @@ function agregarRegistro(){
     let _correo=document.getElementById("Correo").value;
     let _contrasena=document.getElementById("Contrasena").value;
 
-    const usuario = {
-        nombre: _nombre,
-        genero: form.getRadioOption(_genero),
-        telefono: _telefono,
-        direccion: _direccion,
-        correo: _correo,
-        contrasena: _contrasena
-    }
-    registros.push(usuario);
-    console.log(registros);
-
     if(
         form.checkNombre(_nombre) &&
         form.checkGenero(_genero) &&
@@ -39,8 +28,9 @@ function agregarRegistro(){
             }
             registros.push(usuario);
     }
+    console.log(registros);
     
-    alert(registros);
+    alert(registros);        
 }
 
 
@@ -55,6 +45,7 @@ function ordenarArreglo(arreglo){
             return 1
         return 0 //default return value (no sorting)
     })
+    console.log(arreglo);
     return arreglo;
 }
 //console.log(ordenarArreglo(registros))
@@ -65,6 +56,7 @@ function filtrarCorreo(arreglo) {
     arreglo.forEach((e) => {
         if(/@gmail.com/i.test(e.correo)) results.push(e.correo);        
     })
+    console.log(results);
     return results;
 }
 //console.log(filtrarCorreo(registros))
@@ -76,8 +68,6 @@ export {
     filtrarCorreo,
     agregarRegistro
 };
-
-//function saludar(){alert("HOLAAA")}
 
 const btnRegistrar = document.getElementById("btn-submit-form");
 btnRegistrar.addEventListener("click",agregarRegistro);

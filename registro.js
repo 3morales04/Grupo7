@@ -2,38 +2,43 @@ import * as form from "./form.js";
 
 let registros=[];
 
-function agregarRegistro(){
-    let _nombre=document.getElementById("Nombre").value;
-    let _genero=document.getElementsByName("Genero");
-    let _telefono=document.getElementById("Telefono").value;
-    let _direccion=document.getElementById("Direccion").value;
-    let _correo=document.getElementById("Correo").value;
-    let _contrasena=document.getElementById("Contrasena").value;
-
-    if(
-        form.checkNombre(_nombre) &&
-        form.checkGenero(_genero) &&
-        form.checkTelefono(_telefono) &&
-        form.checkDir (_direccion) &&
-        form.checkCorreo(_correo) &&
-        form.checkContrasena(_contrasena)
-        ){
-            const usuario = {
-                nombre: _nombre,
-                genero: form.getRadioOption(_genero),
-                telefono: _telefono,
-                direccion: _direccion,
-                correo: _correo,
-                contrasena: _contrasena
-            }
-            registros.push(usuario);
+class Usuario {
+    constructor(nombre, genero, telefono, direccion, correo, contrasena) {
+        this.nombre = nombre,
+        this.genero = genero,
+        this.telefono = telefono,
+        this.direccion = direccion,
+        this.correo = correo,
+        this.contrasena = contrasena;
     }
-    console.log(registros);
-    
-    alert(registros);        
+    toString() {
+        return (`Nombre: ${this.nombre}\nGenero: ${this.genero}\nTeléfono: ${this.telefono}\nDirección: ${this.direccion}\nCorreo: ${this.correo}\nContraseña: ${this.contrasena}`);
+    }
 }
 
 
+//1. Función para agregar registro
+function agregarRegistro(){
+    let nombre=document.getElementById("Nombre").value;
+    let genero=document.getElementsByName("Genero");
+    let telefono=document.getElementById("Telefono").value;
+    let direccion=document.getElementById("Direccion").value;
+    let correo=document.getElementById("Correo").value;
+    let contrasena=document.getElementById("Contrasena").value;
+
+    if(
+        form.checkNombre(nombre) &&
+        form.checkGenero(genero) &&
+        form.checkTelefono(telefono) &&
+        form.checkDir (direccion) &&
+        form.checkCorreo(correo) &&
+        form.checkContrasena(contrasena)
+        ){
+            registros.push(new Usuario(nombre, form.getRadioOption(genero), telefono, direccion, correo, contrasena));
+    }
+    console.log(registros);    
+    alert(registros);        
+}
 
 //Funcion para ordenar Arreglo
 function ordenarArreglo(arreglo){
@@ -62,7 +67,7 @@ function filtrarCorreo(arreglo) {
 }
 //console.log(filtrarCorreo(registros))
 
-//Exportación de módulos
+//Exportación de módulos:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 export {
     registros,
     ordenarArreglo,
@@ -70,5 +75,6 @@ export {
     agregarRegistro
 };
 
+//Funcionamiento boton Registro::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 const btnRegistrar = document.getElementById("btn-submit-form");
 btnRegistrar.addEventListener("click",agregarRegistro);

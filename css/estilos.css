@@ -12,9 +12,14 @@ header{
     width: 100%;
 }
 
-#h1-header-logo{
+.imagotipo{
+    width: 30vw;
     user-select: none;
-    padding: 40px;
+    padding: 10px;
+}
+
+#fc-home{
+    display: none;
 }
 
 /*=======================================*/
@@ -83,6 +88,10 @@ button a{
 
 /*FORMULARIO=============================*/
 
+.titulo{
+    text-align: center;
+}
+
 #form-registro{
     width: 400px;
     background-color: #2a3d53; 
@@ -101,7 +110,7 @@ button a{
     border-radius: 4px;
     border: 1px solid #303b55;
     padding: 5px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 #btn-submit-form {
@@ -140,6 +149,8 @@ button a{
     button{
         font-size: 1.3em;
     }
+
+
 }
 
 @media (min-width:501px) and (max-width: 800px) {
@@ -170,6 +181,12 @@ button a{
 
     #nav-menu{
         width: 30%;
+    }
+
+    .imagotipo{
+        width: 30vw;
+        user-select: none;
+        padding: 20px;
     }
 
     #btn-menu-hamburguesa:checked~nav{

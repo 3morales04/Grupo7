@@ -1,4 +1,3 @@
-/*MAHIDA*/
 /*USE nombre_db;*/
 
 SELECT * 

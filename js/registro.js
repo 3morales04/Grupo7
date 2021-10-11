@@ -10,10 +10,10 @@ class Usuario {
         this.direccion = direccion,
         this.correo = correo,
         this.contrasena = contrasena;
-    }
+    }/*
     toString() {
         return (`Nombre: ${this.nombre}\nGenero: ${this.genero}\nTeléfono: ${this.telefono}\nDirección: ${this.direccion}\nCorreo: ${this.correo}\nContraseña: ${this.contrasena}`);
-    }
+    }*/
 }
 
 
@@ -36,8 +36,9 @@ function agregarRegistro(){
         ){
             registros.push(new Usuario(nombre, form.getRadioOption(genero), telefono, direccion, correo, contrasena));
     }
-    console.log(registros);    
-    alert(registros);        
+
+    console.log(JSON.stringify(registros)); //BORRAR LINEA
+    alert(JSON.stringify(registros)); //BORRAR LINEA
 }
 
 //Funcion para ordenar Arreglo
@@ -51,7 +52,7 @@ function ordenarArreglo(arreglo){
             return 1
         return 0 //default return value (no sorting)
     })
-    console.log(arreglo);
+    console.log(arreglo); //BORRAR LINEA
     return arreglo;
 }
 //console.log(ordenarArreglo(registros))
@@ -62,7 +63,7 @@ function filtrarCorreo(arreglo) {
     arreglo.forEach((e) => {
         if(/@gmail.com/i.test(e.correo)) results.push(e.correo);        
     })
-    console.log(results);
+    console.log(results); //BORRAR LINEA
     return results;
 }
 //console.log(filtrarCorreo(registros))

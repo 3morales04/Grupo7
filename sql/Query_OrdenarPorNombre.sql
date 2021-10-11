@@ -1,4 +1,3 @@
-/*LUIS*/
 /*USE nombre_db;*/
 
 SELECT nombre, telefono, direccion, correo

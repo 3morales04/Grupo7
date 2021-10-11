@@ -1,4 +1,3 @@
-/*NELSON*/
 /*USE nombre_db;*/
 
 SELECT count(genero)

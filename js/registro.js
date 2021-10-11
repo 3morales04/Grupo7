@@ -16,7 +16,6 @@ class Usuario {
     }*/
 }
 
-
 //1. Función para agregar registro
 function agregarRegistro(){
     let nombre=document.getElementById("Nombre").value;
@@ -37,7 +36,7 @@ function agregarRegistro(){
             registros.push(new Usuario(nombre, form.getRadioOption(genero), telefono, direccion, correo, contrasena));
     }
 
-    console.log(JSON.stringify(registros)); //BORRAR LINEA
+    console.log(registros); //BORRAR LINEA
     alert(JSON.stringify(registros)); //BORRAR LINEA
 }
 
@@ -79,3 +78,7 @@ export {
 //Funcionamiento boton Registro::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 const btnRegistrar = document.getElementById("btn-submit-form");
 btnRegistrar.addEventListener("click",agregarRegistro);
+
+//Funcionamiento boton Regreso::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+const btnRegresar = document.getElementById("btn-reset-form");
+btnRegresar.addEventListener("click",agregarRegistro);

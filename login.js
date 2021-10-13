@@ -33,11 +33,11 @@ function login(lcorreo, ltelefono, lcontrasena){
     var Acceso = false; 
 
     for(var i = 0; i< lregistros.length; i++){ //recorro la varialbe lregistros buscando la coincidencia con la posicion
-        if(lcorreo == lregistros[i][0] && ltelefono == lregistros[i][1] && lcontrasena == lregistros[i][2]){ // creo que aquitambien debe ser valido el captcha seguen el pdf
+        if(lcorreo == lregistros[i][0] && ltelefono == lregistros[i][1] && lcontrasena == lregistros[i][2] && function (validarCAPTCHA)){ // creo que aquitambien debe ser valido el captcha seguen el pdf
             Acceso = true; //si es igual es verdadero
         }
     }
-    return Acceso
+    return Acceso;
 }   
 
 //3. Función validarCAPTCHA

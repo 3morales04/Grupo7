@@ -51,7 +51,7 @@ function validarCAPTCHA(valor){
 
         switch (valor.toLowerCase()){
             case "":
-                throw "CAPTCHA vacio";
+                throw "CAPTCHA vacío";
                 break;
             case ANSWER:
                 isValid = true;

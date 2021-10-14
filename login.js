@@ -28,12 +28,12 @@ function agregarRegistro(){
 
 // funcion login
 // valida el login con los campos correo telefono contraseña
-function login(lcorreo, ltelefono, lcontrasena, valor){ 
+function login(lcorreo, ltelefono, lcontrasena, lvalor){ 
     var lregistros = registros(); // la variable lregistros va a ser igual al registro que entrega la variable de agregar registros
     var Acceso = false; 
 
     for(var i = 0; i< lregistros.length; i++){ //recorro la varialbe lregistros buscando la coincidencia con la posicion
-        if(lcorreo == lregistros[i][0] && ltelefono == lregistros[i][1] && lcontrasena == lregistros[i][2] &&  validarCAPTCHA(valorRecibido) == valor ){ // creo que aquitambien debe ser valido el captcha seguen el pdf
+        if(lcorreo == lregistros[i][0] && ltelefono == lregistros[i][1] && lcontrasena == lregistros[i][2] &&  validarCAPTCHA(valor) == lvalor ){ 
             Acceso = true; //si es igual es verdadero
         }
     }

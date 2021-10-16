@@ -1,3 +1,4 @@
+var cont =1
 let registros = [];
 
 
@@ -26,23 +27,37 @@ function agregarRegistro(){
     });
 }
 
+
+
 function login(){ 
-    let acceso = false;
+    if (cont == 1) {
+        cont += 1;
+        console.log(`true ${cont}`);
+        return true;
+    } else {
+        cont += 1;
+        console.log(`false ${cont}`);
+        return false;
+    }
+    
     let telefono=document.getElementById("telefono").value;
     let correo=document.getElementById("correo").value;
     let contrasena=document.getElementById("contrasena").value;
+    var captcha=document.getElementById("captcha").value;
 
-    registros.forEach(function(e) {
-        if(e.correo==correo){
-            if(e.telefono==telefono && e.contrasena==contrasena){
-                acceso = true;
-            }
-        }
+    const user = registros.find(user => (user.correo === correo) && (user.telefono === telefono) && (user.contrasena===contrasena) && (user.captcha === valor) ); 
+        if (user){
+            return true;
+        }else{
+            return false;
 
-    });
-    
-    return acceso;
-}   
+    }
+}
+
+
+
+
+
 
 //3. Función validarCAPTCHA
 function validarCAPTCHA(valor){
@@ -76,12 +91,3 @@ module.exports.registros = registros;
 module.exports.login = login;
 module.exports.validarCAPTCHA = validarCAPTCHA;
 module.exports.agregarRegistro = agregarRegistro;
-
-/*
-module.exports = {
-    registros,
-    login,
-    agregarRegistro,
-    validarCAPTCHA,
-}
-*/

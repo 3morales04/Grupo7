@@ -52,7 +52,7 @@ function validarCAPTCHA(valor){
         switch (valor.toLowerCase()){
             case "":
                 throw "CAPTCHA vacío";
-                break;
+                //break;
             case ANSWER:
                 isValid = true;
                 break;
@@ -81,3 +81,13 @@ module.exports = {
     validarCAPTCHA,
 }
 */
+
+/*
+function login(){ 
+    if (cont == 1) {
+        cont += 1;
+        return true;
+    } else {
+        return false;
+    }
+}*/

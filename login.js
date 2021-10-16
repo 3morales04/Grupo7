@@ -7,10 +7,18 @@ function login(){
     let correo=document.getElementById("correo").value;
     let contrasena=document.getElementById("contrasena").value;
     let captcha=document.getElementById("captcha").value;
+
+    console.log(registros[0]);
+    console.log(`telefono: ${telefono}, correo: ${correo}, contraseña: ${contrasena}`);
     
     registros.forEach(e => {
         if(e.correo.toLowerCase() === correo.toLowerCase()){
             acceso = true;
+            /*
+            if(e.telefono == telefono && e.contrasena == contrasena){
+                acceso = true;
+            }
+            */
         }
     });
 

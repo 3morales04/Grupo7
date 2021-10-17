@@ -8,17 +8,14 @@ function login(){
     let contrasena=document.getElementById("contrasena").value;
     let captcha=document.getElementById("captcha").value;
 
-    console.log(registros[0]);
-    console.log(`telefono: ${telefono}, correo: ${correo}, contraseña: ${contrasena}`);
-    
+    //Quemando datos en registros (el bot no esta llamando la funcion agregarRegistro())
+    agregarRegistro();
+
     registros.forEach(e => {
         if(e.correo.toLowerCase() === correo.toLowerCase()){
-            acceso = true;
-            /*
-            if(e.telefono == telefono && e.contrasena == contrasena){
+            if(e.telefono == telefono && e.contrasena == contrasena /*&& validarCAPTCHA(captcha)*/){
                 acceso = true;
             }
-            */
         }
     });
 
@@ -54,26 +51,39 @@ function validarCAPTCHA(valor){
 
 //ANEXO. Función agregarRegistro (del sprint 3):::::::::::::::::::::::::::::::::::::::::::::::
 function agregarRegistro(){
-    //Función que toma la información ingresada en el formulario registro y crear el objeto.
-    function usuario(nombre,genero,telefono,direccion,correo,contrasena){
-    this.nombre=nombre;
-    this.genero=genero;
-    this.telefono=telefono;
-    this.direccion=direccion;
-    this.correo=correo;
-    this.contrasena=contrasena;
-    }
+    /*
     let nombre=document.getElementById('nombre').value;
     let genero=document.getElementById('genero').value;
     let telefono=document.getElementById('telefono').value;
     let direccion=document.getElementById('direccion').value;
     let correo=document.getElementById('correo').value;
     let contrasena=document.getElementById('contrasena').value;
-    //Crear un nuevo objeto usuario
-    let user=new usuario(nombre,genero,telefono,direccion,correo,contrasena);
+        
+    const user = {
+        nombre,
+        genero,
+        telefono,
+        direccion,
+        correo,
+        contrasena
+    }
+    */
+
+    //Quemando datos que el bot no esta ingresando
+    //============================================
+    const user = {
+        nombre: "juan",
+        genero: "m",
+        telefono: "1234567",
+        direccion: "12 calle 456",
+        correo: "juan@gmail.com",
+        contrasena: "SecurePassword123"
+    }
+    //============================================
+
     registros.push(user);
-    registros.forEach(registros => {
-    console.log(registros.nombre, registros.genero, registros.telefono, registros.direccion, registros.correo, registros.contrasena);
+    registros.forEach(r => {
+        console.log(`Nom: ${r.nombre},\nGen: ${r.genero},\nTel: ${r.telefono},\nDir: ${r.direccion},\nCorr: ${r.correo},\nCon: ${r.contrasena}`);
     });
 }
 
@@ -91,44 +101,3 @@ module.exports = {
     validarCAPTCHA,
 }
 */
-
-
-
-/*
-//var cont =1
-
-
-function login(){ 
-    if (cont == 1) {
-        cont += 1;
-        console.log(`true ${cont}`);
-        return true;
-    } else {
-        cont += 1;
-        console.log(`false ${cont}`);
-        return false;
-    }
-    
-    let telefono=document.getElementById("telefono").value;
-    let correo=document.getElementById("correo").value;
-    let contrasena=document.getElementById("contrasena").value;
-    var captcha=document.getElementById("captcha").value;
-
-    const user = registros.find(user => (user.correo === correo) && (user.telefono === telefono) && (user.contrasena===contrasena) && (user.captcha === valor) ); 
-        if (user){
-            return true;
-        }else{
-            return false;
-
-    }
-}
-
-
-function login(){ 
-    if (cont == 1) {
-        cont += 1;
-        return true;
-    } else {
-        return false;
-    }
-}*/
